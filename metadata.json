@@ -1,0 +1,11 @@
+{
+  "name": "puppetfinland-dhclient",
+  "version": "0.1.0",
+  "author": "Puppet-Finland team",
+  "license": "BSD license",
+  "summary": "Setup dhclient",
+  "source": "https://github.com/Puppet-Finland/dhclient.git",
+  "project_page": "https://github.com/Puppet-Finland/dhclient",
+  "dependencies": [
+  ]
+}
