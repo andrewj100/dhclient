@@ -30,7 +30,7 @@ class dhclient
 
 if $manage == 'yes' {
 
-    class { 'dhclient::install':
+    class { '::dhclient::install':
         ensure => $ensure,
     }
 }
