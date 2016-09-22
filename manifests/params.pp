@@ -1,19 +1,16 @@
-#
-# == Class: dhclient::params
-#
-# Defines some variables based on the operating system
-#
-class dhclient::params {
-
-    case $::osfamily {
-        'RedHat': {
-            $package_name = 'dhclient'
-        }
-        'Debian': {
-            $package_name = 'isc-dhcp-client'
-        }
-        default: {
-            fail("Unsupported OS: ${::osfamily}")
-        }
+class dhclient::params { 
+  case $::osfamily {
+    'RedHat' : {
+      $package = 'isc-dhcp-client'
     }
+    'ubuntu' : {
+      $package = 'isc-dhcp-client'
+    }
+    default : {
+      fail("Module ${module_name} is not supported on ${::osfamily}")
+    }
+  }
+  $domain_name = undef
+  $domain_search = undef
+  $timeout = 300 
 }

@@ -1,0 +1,26 @@
+# ################################################# #
+# 
+# This file managed by Puppet. Do not edit directly #
+#
+# ################################################# #
+
+option rfc3442-classless-static-routes code 121=array of unsigned integer 8;
+
+send host-name = <%= @hostname %>
+
+request subnet-mask, broadcast-address, time-offset, routers,
+   domain-name, domain-name-servers, domain-search, host-name,
+   dhcp6.name-servers, dhcp6.domain-search, dhcp6.fqdn, dhcp6.sntp-servers,
+   netbios-name-servers, netbios-scope, interface-mtu,
+   rfc3442-classless-static-routes, ntp-servers;
+
+timeout <%= @timeout %>;
+
+<% if @domain_name -%>
+supersede domain-name "<%= @domain_name %>"
+<% end -%>
+<% if @domain_search -%>
+supersede domain-search "<%= @domain_search %>"
+<% end -%>
+
+

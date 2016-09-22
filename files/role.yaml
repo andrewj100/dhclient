@@ -1,0 +1,3 @@
+role: dhclient
+domain_search: mydomain1.com, mydomain2.com
+domain_name: mydomain.com
